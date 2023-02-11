@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>이름</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="member : ${members}"><!--    members[index] 값을 member에 대입    -->
+        <td th:text="${member.id}"></td><!--    해당값으로 출력   -->
+        <td th:text="${member.name}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
