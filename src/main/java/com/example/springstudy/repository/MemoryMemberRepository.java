@@ -1,10 +1,8 @@
 package com.example.springstudy.repository;
 
 import com.example.springstudy.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
-@Repository
 public class MemoryMemberRepository implements MemberRepository{
 //저장소에 관여하는 repository
     private static Map<Long,Member> store= new HashMap<>();
@@ -37,8 +35,4 @@ public class MemoryMemberRepository implements MemberRepository{
         return new ArrayList<>(store.values()); //value = Member 반환
     }
 
-    @Override
-    public void clearStore(){ //@AfterEach 테스트케이스 작성시 Memory 값 정리를 위한 메소드
-        store.clear();
-    }
 }
